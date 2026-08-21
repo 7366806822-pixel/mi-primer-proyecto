@@ -1,0 +1,41 @@
+['violencia familiar','violencia mujer'],['cem','linea100','mimp','mp-denuncias','pnp']],
+['Migraciones',['migracion','residencia'],['agencia-digital','migraciones']],
+['Derechos humanos',['derechos humanos','cidh'],['cidh-portal','cidh','corteidh','corteidh-juris','ohchr','uhri']],
+['Investigar tesis',['tesis','doctrina'],['alicia','renati','repo-pucp','repo-unmsm','google-scholar','scielo-peru']],
+['Buscar trabajo jurídico',['trabajo abogado','convocatoria'],['talento-peru','pj-convocatorias','mp-convocatorias','jnj-convocatorias']],
+['Automatizar',['automatizar','workflow'],['n8n','make','zapier','apps-script','power-automate']]
+];
+const PR=[
+['Litigación Penal',['codigo-penal-peru','codigo-procesal-penal-peru','mpfn','mp-denuncias','mp-consulta-caso-fiscal','mp-fecor','pnp','cej','sinoe','mpv-penal','pj-acuerdos-penales','pj-sentencias-vinculantes-penales','pj-juris']],
+['Civil',['cej','mpe','sinoe','eje','sprl','remiju','spij']],
+['Familia',['redam','cej','mpe','sinoe','reniec-actas','cem','mimp']],
+['Administrativo',['gobpe','servir','tsc','contraloria','pte','ttaip','pge']],
+['Laboral',['sunafil','tfl','mtpe','essalud','onp']],
+['Tributario',['sunat','sunat-sol','buzon-sol','tribunal-fiscal']],
+['Empresarial',['sunarp','sid-sunarp','sunat-ruc','indecopi','tu-empresa']],
+['Contratación',['oece','seace','rnp','tcp','peru-compras']],
+['Ambiental',['minam','oefa','senace','ana','sinia']],
+['Minero-Energético',['minem','ingemmet','geocatmin','osinergmin']],
+['Constitucional',['tc','tc-causas','tc-juris','spij','defensoria']],
+['Derechos Humanos',['cidh','corteidh','ohchr','uhri','upr']],
+['Internacional',['tratados-peru','un-treaties','icj','icc','hcch','can','tjca']],
+['Arbitraje',['icsid','uncitral','pca','icc-arbitration']],
+['Investigación',['spij','alicia','renati','google-scholar','scielo-peru','zotero']],
+['Carrera jurídica',['jnj','amag','talento-peru','pj-convocatorias']],
+['LegalTech e IA',['chatgpt','claude','gemini','notebooklm','n8n','supabase']]
+];
+const SYN={'fiscalia':'ministerio publico','fiscalía':'ministerio publico','mp':'ministerio publico','pj':'poder judicial','expediente':'cej eje','notificacion':'sinoe','notificación':'sinoe','penal':'derecho penal fiscalia pnp inpe corte suprema codigo penal','casacion':'jurisprudencia corte suprema penal','casación':'jurisprudencia corte suprema penal','empresa':'sunarp sunat indecopi','inmueble':'sunarp sprl','laboral':'sunafil mtpe'};
+let S={q:'',cat:'Todos',f:'Todos',fav:new Set(JSON.parse(localStorage.getItem('cmjFavV5')||'[]'))};
+const $=x=>document.getElementById(x),N=x=>(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),E=x=>String(x||'').replace(/[&<>"']/g,a=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[a])),by=i=>R.find(r=>r.i===i),br=r=>r.b||[],txt=r=>N([r.n,r.a,r.e,r.c,...br(r),r.t,r.d,r.p,r.x,r.o,r.m,r.z,r.y].join(' '));
+
+function sameOriginFavicon(raw){try{let u=new URL(raw);return u.origin+'/favicon.ico'}catch{return''}}
+function entityHome(r){if(HOME[r.e])return HOME[r.e];let e=N(r.e);for(const [k,v] of Object.entries(HOME))if(e.includes(N(k))||N(k).includes(e))return v;return r.s||r.u}
+function logoNext(img){try{const a=JSON.parse(decodeURIComponent(img.dataset.srcs||'%5B%5D'));let i=(+img.dataset.idx||0)+1;if(i<a.length){img.dataset.idx=i;img.src=a[i];return}}catch{}img.style.display='none';img.parentElement.classList.add('fallback')}
+function logo(r,cl=''){let a=[];const add=x=>{if(x&&!a.includes(x))a.push(x)};add(r.l);add(sameOriginFavicon(entityHome(r)));add(sameOriginFavicon(r.s));add(sameOriginFavicon(r.u));let f=E((r.a||r.n).replace(/[^A-Za-zÁÉÍÓÚÑ0-9]/g,'').slice(0,4));return `<span class="logo ${cl}">${a.length?`<img src="${E(a[0])}" data-srcs="${encodeURIComponent(JSON.stringify(a))}" data-idx="0" loading="lazy" decoding="async" alt="Logo o identidad institucional oficial de ${E(r.e)}" onerror="logoNext(this)">`:''}<em>${f}</em></span>`}
+function portalFallback(r){let s=r.s||'';if(s&&s!==r.u)return s;let h=entityHome(r);if(h)return h;try{return new URL(r.u).origin}catch{return r.u}}
+function safeLink(r,which='u'){let u=which==='s'?(r.s||r.u):r.u;let fb=which==='s'?entityHome(r):portalFallback(r);return 'https://cmj-link-gateway-v5-jsvte01ye.vercel.app/api/go?url='+encodeURIComponent(u)+'&fallback='+encodeURIComponent(fb)}
+function openResource(i){let r=by(i);if(r)window.open(safeLink(r),'_blank','noopener,noreferrer')}
+async function checkLink(i,b){let r=by(i);if(!r)return;let old=b?.textContent;if(b){b.disabled=true;b.textContent='Comprobando…'}try{let x=await fetch('https://cmj-link-gateway-v5-jsvte01ye.vercel.app/api/check-link?url='+encodeURIComponent(r.u),{cache:'no-store'}).then(r=>r.json());if(b){b.textContent=x.ok?(x.blocked?'Disponible · acceso protegido':'Disponible · '+(x.status||'OK')):'Directo no responde · se usará respaldo oficial';b.classList.toggle('ok',!!x.ok);b.classList.toggle('warn',!x.ok)}}catch{if(b)b.textContent='Verificación manual requerida'}finally{if(b){b.disabled=false;setTimeout(()=>{b.textContent=old;b.classList.remove('ok','warn')},6000)}}}
+function matchcat(r,c){let n=N(c),a=[N(r.c),...br(r).map(N)];if(c==='Acceso rápido')return r.k;if(c==='Favoritos')return S.fav.has(r.i);if(c==='Mapa por ramas')return false;if(n==='sistema interamericano')return ['cidh','cidh-portal','corteidh','corteidh-juris'].includes(r.i);if(n==='organismos internacionales')return r.g;return a.some(x=>x===n||x.includes(n)||n.includes(x))}
+function mkNav(){let h='';for(let[g,it]of G){let rows=it.map(c=>{let n=R.filter(r=>matchcat(r,c)).length;if(!n&&!['Acceso rápido','Favoritos','Mapa por ramas'].includes(c))return'';return `<button class="nav" data-cat="${E(c)}"><span>${E(c)}</span><span>${n||''}</span></button>`}).join('');if(rows)h+=`<div class="group"><button class="gh">${E(g)}</button><div class="gb">${rows}</div></div>`}$('nav').innerHTML=h;document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{let c=b.dataset.cat;if(c==='Acceso rápido')return $('quick').scrollIntoView({behavior:'smooth'});if(c==='Mapa por ramas')return $('atlas').scrollIntoView({behavior:'smooth'});S.cat=c;render()})}
+function mkStats(){let branches=new Set(R.flatMap(br));let vals=[['Recursos',R.length],['Entidades',new Set(R.map(r=>r.e)).size],['Ramas',branches.size],['Oficiales',R.filter(r=>r.f).length],['Internacionales',R.filter(r=>r.g).length],['Derecho Penal',R.filter(r=>br(r).includes('Derecho Penal')).length],['Actualizado','21/08/2026']];$('stats').innerHTML
