@@ -1,0 +1,33 @@
+w.gob.pe/mpfn","Ministerio Público Fiscalía de la Nación":"https://www.gob.pe/mpfn","Tribunal Constitucional":"https://www.tc.gob.pe/","Congreso de la República":"https://www.congreso.gob.pe/","Ministerio de Justicia y Derechos Humanos":"https://www.gob.pe/minjus","Superintendencia Nacional de los Registros Públicos":"https://www.gob.pe/sunarp","SUNARP":"https://www.gob.pe/sunarp","Superintendencia Nacional de Aduanas y de Administración Tributaria":"https://www.sunat.gob.pe/","SUNAT":"https://www.sunat.gob.pe/","Registro Nacional de Identificación y Estado Civil":"https://www.gob.pe/reniec","RENIEC":"https://www.gob.pe/reniec","Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual":"https://www.gob.pe/indecopi","INDECOPI":"https://www.gob.pe/indecopi","Superintendencia Nacional de Fiscalización Laboral":"https://www.gob.pe/sunafil","SUNAFIL":"https://www.gob.pe/sunafil","Autoridad Nacional del Servicio Civil":"https://www.gob.pe/servir","SERVIR":"https://www.gob.pe/servir","Organismo Especializado para las Contrataciones Públicas Eficientes":"https://www.gob.pe/oece","OECE":"https://www.gob.pe/oece","Contraloría General de la República":"https://www.gob.pe/contraloria","Superintendencia Nacional de Migraciones":"https://www.gob.pe/migraciones","Policía Nacional del Perú":"https://www.gob.pe/pnp","Instituto Nacional Penitenciario":"https://www.gob.pe/inpe","Jurado Nacional de Elecciones":"https://www.jne.gob.pe/","Oficina Nacional de Procesos Electorales":"https://www.onpe.gob.pe/","Superintendencia de Banca, Seguros y AFP":"https://www.sbs.gob.pe/","Superintendencia del Mercado de Valores":"https://www.smv.gob.pe/","Ministerio del Ambiente":"https://www.gob.pe/minam","Organismo de Evaluación y Fiscalización Ambiental":"https://www.gob.pe/oefa","Ministerio de Energía y Minas":"https://www.gob.pe/minem","OSIPTEL":"https://www.osiptel.gob.pe/","OSINERGMIN":"https://www.osinergmin.gob.pe/","SUNASS":"https://www.sunass.gob.pe/","OSITRAN":"https://www.ositran.gob.pe/","Comisión Interamericana de Derechos Humanos":"https://www.oas.org/es/cidh/","Corte Interamericana de Derechos Humanos":"https://www.corteidh.or.cr/","Naciones Unidas":"https://www.un.org/"};
+const G=[
+['INICIO',['Acceso rápido','Favoritos','Mapa por ramas']],
+['JUSTICIA',['Poder Judicial','Ministerio Público','Tribunal Constitucional','Acceso a Justicia','Defensa Jurídica del Estado']],
+['DERECHO PENAL',['Derecho Penal','Derecho Procesal Penal','Criminología y Política Criminal','Ejecución Penal y Penitenciario','Sistema Penal']],
+['DERECHO PRIVADO',['Derecho Civil','Derecho Procesal Civil','Derecho de Familia','Derecho de Sucesiones','Derecho Empresarial','Derecho Corporativo','Derecho Societario','Derecho Registral','Derecho Notarial','Derecho Concursal']],
+['DERECHO PÚBLICO',['Derecho Constitucional','Derecho Administrativo','Contrataciones Públicas','Derecho Tributario','Derecho Electoral','Derecho Municipal','Gobiernos Regionales','Transparencia Pública','Gestión Pública']],
+['TRABAJO, FINANZAS Y MERCADO',['Derecho Laboral','Derecho Previsional','Derecho Financiero','Derecho Bancario','Mercado de Valores','Compliance','Protección al Consumidor','Propiedad Intelectual','Indecopi']],
+['SECTORES ESPECIALIZADOS',['Derecho Ambiental','Derecho de Recursos Hídricos','Derecho Forestal','Derecho Minero','Derecho Energético','Derecho Agrario','Derecho Pesquero','Derecho de Transportes','Derecho de Telecomunicaciones','Derecho Sanitario','Derecho Educativo','Migraciones y Extranjería','Protección de Datos']],
+['INTERNACIONAL',['Derechos Humanos','Sistema Interamericano','Derecho Internacional','Derecho Internacional Público','Derecho Internacional Privado','Derecho Penal Internacional','Derecho Internacional Humanitario','Arbitraje','Arbitraje Internacional','Comercio Internacional','Integración Regional','Organismos Internacionales']],
+['CONOCIMIENTO',['Legislación','Jurisprudencia','Investigación Jurídica','Bibliotecas Jurídicas','Repositorios Universitarios','Bases Jurídicas Profesionales','Formación Jurídica']],
+['TECNOLOGÍA',['LegalTech','Inteligencia Artificial','Automatización','Gestión del Estudio Jurídico','Firma e Identidad Digital','Gobierno Digital','Herramientas Profesionales']],
+['CARRERA',['Carrera Jurídica','Concursos y Convocatorias','Colegios de Abogados']]
+];
+const F=['Todos','Oficial','Gratuito','Autenticación','Institucional','Internacional','Académico','Privado','Pago'];
+const NR=[
+['Presentar demanda',['demanda','escrito judicial'],['mpe','sinoe','cej','eje','pj-tramites']],
+['Denunciar un delito',['denuncia penal','denunciar delito','fiscalia'],['mp-denuncias','mpfn','pnp','mp-fiscalias-turno']],
+['Consultar caso fiscal',['caso fiscal','carpeta fiscal','seguimiento fiscal'],['mp-consulta-caso-fiscal','mp-seguimiento','mpfn']],
+['Buscar acuerdo plenario penal',['acuerdo plenario','pleno penal'],['pj-acuerdos-penales','pj-juris','codigo-penal-peru']],
+['Buscar sentencia penal vinculante',['sentencia penal','sentencia vinculante penal'],['pj-sentencias-vinculantes-penales','pj-sentencias-penales-2026','pj-juris']],
+['Consultar Código Penal',['codigo penal','código penal'],['codigo-penal-peru','spij','el-peruano']],
+['Consultar Código Procesal Penal',['codigo procesal penal','código procesal penal'],['codigo-procesal-penal-peru','spij','minjus-ceicpp']],
+['Antecedentes penales/policiales/judiciales',['antecedentes','certificado antecedentes'],['antecedentes-penales','pnp-antecedentes','antecedentes-judiciales']],
+['Ejecución penal',['ejecucion penal','ejecución penal','penitenciario'],['codigo-ejecucion-penal','inpe','antecedentes-judiciales']],
+['Consultar propiedad',['propiedad','inmueble','partida'],['sprl','sunarp','siguelo','alerta-registral']],
+['Constituir empresa',['empresa','sociedad'],['sunarp','sid-sunarp','sunat-ruc','sunat-sol','tu-empresa']],
+['Registrar marca',['marca'],['indecopi-marcas','wipo-global-brand','indecopi']],
+['Problema laboral',['laboral','empleador','trabajador'],['sunafil','sunafil-casilla','sunafil-exp','tfl','mtpe']],
+['Contratación pública',['contratacion','seace','proveedor'],['oece','seace','rnp','tcp','peru-compras']],
+['Buscar jurisprudencia',['jurisprudencia','casacion','casación','sentencia'],['pj-juris','tc-juris','pj-acuerdos-penales','pj-sentencias-vinculantes-penales','tfl','tsc','corteidh-juris','tjca']],
+['Alimentos',['alimentos','pension alimentos'],['redam','cej','mpe','sinoe','reniec-actas']],
+['Violencia familiar',
