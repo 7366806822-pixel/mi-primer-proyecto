@@ -1,0 +1,6 @@
+ngth} sistemas priorizados</small></button>`).join('');document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>{let a=PR[+b.dataset.route][1].map(by).filter(Boolean);$('routeres').innerHTML=a.map(card).join('');wire($('routeres'))})}
+$('search').oninput=e=>{S.q=e.target.value;render()};$('needgo').onclick=need;$('close').onclick=()=>$('modal').classList.remove('on');$('modal').onclick=e=>{if(e.target===$('modal'))$('modal').classList.remove('on')};$('menu').onclick=()=>$('side').classList.toggle('on');document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('search').focus()}if(e.key==='Escape')$('modal').classList.remove('on')});
+mkNav();mkStats();mkFilters();mkQuick();mkAtlas();mkNeed();mkRoutes();render();
+
+})();
+</script></body></html>
